@@ -32,45 +32,52 @@
 // Аккермана с помощью рекурсии. Даны два
 // неотрицательных числа m и n. 
 
-class Program 
-{ 
-    static void Main() 
-    { 
-        Console.Write("Введите неотрицательное число m: "); 
-        int m = int.Parse(Console.ReadLine()); 
+// class Program 
+// { 
+//     static void Main() 
+//     { 
+//         Console.Write("Введите неотрицательное число m: "); 
+//         int m = int.Parse(Console.ReadLine()); 
  
-        Console.Write("Введите неотрицательное число n: "); 
-        int n = int.Parse(Console.ReadLine()); 
+//         Console.Write("Введите неотрицательное число n: "); 
+//         int n = int.Parse(Console.ReadLine()); 
  
-        int result = AckermannFunction(m, n); 
-        Console.WriteLine($"Значение функции Аккермана для ({m}, {n}) равно: {result}"); 
-    } 
+//         int result = AckermannFunction(m, n); 
+//         Console.WriteLine($"Значение функции Аккермана для ({m}, {n}) равно: {result}"); 
+//     } 
  
-    static int AckermannFunction(int m, int n) 
-    { 
-        if (m == 0) 
-            return n + 1; 
-        else if (n == 0) 
-            return AckermannFunction(m - 1, 1); 
-        else 
-            return AckermannFunction(m - 1, AckermannFunction(m, n - 1)); 
-    } 
-}
-
-
-
-
-
-
-
-
-
-
-
-
+//     static int AckermannFunction(int m, int n) 
+//     { 
+//         if (m == 0) 
+//             return n + 1; 
+//         else if (n == 0) 
+//             return AckermannFunction(m - 1, 1); 
+//         else 
+//             return AckermannFunction(m - 1, AckermannFunction(m, n - 1)); 
+//     } 
+// }
 
 
 // Задача 3: Задайте произвольный массив. Выведете
 // его элементы, начиная с конца. Использовать
 // рекурсию, не использовать циклы.
 
+class Program
+{
+    static void Main() 
+    { 
+        int[] myArray = { 1, 2, 5, 0, 10, 34 }; 
+ 
+        Console.WriteLine("Элементы массива, начиная с конца:"); 
+        PrintArrayReverse(myArray, myArray.Length - 1); 
+    } 
+ 
+    static void PrintArrayReverse(int[] arr, int index) 
+    { 
+        if (index >= 0) 
+        { 
+            Console.Write(arr[index] + " "); 
+            PrintArrayReverse(arr, index - 1); 
+        } 
+    } 
+}
